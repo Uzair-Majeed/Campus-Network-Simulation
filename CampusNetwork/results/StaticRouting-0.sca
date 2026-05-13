@@ -1,0 +1,1236 @@
+version 3
+run StaticRouting-0-20260513-14:29:06-13086
+attr configname StaticRouting
+attr datetime 20260513-14:29:06
+attr datetimef 20260513-142906
+attr experiment StaticRouting
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network CampusNetwork
+attr processid 13086
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../inet4.5/images
+config description "Custom Static Routing (UZAIR-MAJEED)"
+config **.isInet false
+config *.coreRouter_S.ipAddress "\"10.0.0.1\""
+config *.seRouter_S.ipAddress "\"10.0.1.2\""
+config *.eeRouter_S.ipAddress "\"10.0.2.2\""
+config *.bbaRouter_S.ipAddress "\"10.0.3.2\""
+config *.adminRouter_S.ipAddress "\"10.0.4.2\""
+config *.dnsServer_S.ipAddress "\"10.0.5.2\""
+config *.appServer_S.ipAddress "\"10.0.6.2\""
+config *.seHost1_S.ipAddress "\"192.168.1.2\""
+config *.seHost2_S.ipAddress "\"192.168.1.3\""
+config *.seHost3_S.ipAddress "\"192.168.1.4\""
+config *.eeHost1_S.ipAddress "\"192.168.2.2\""
+config *.eeHost2_S.ipAddress "\"192.168.2.3\""
+config *.eeHost3_S.ipAddress "\"192.168.2.4\""
+config *.bbaHost1_S.ipAddress "\"192.168.3.2\""
+config *.bbaHost2_S.ipAddress "\"192.168.3.3\""
+config *.bbaHost3_S.ipAddress "\"192.168.3.4\""
+config *.adminHost1_S.ipAddress "\"192.168.4.2\""
+config *.adminHost2_S.ipAddress "\"192.168.4.3\""
+config *.adminHost3_S.ipAddress "\"192.168.4.4\""
+config *.coreRouter_S.totalPorts 6
+config *.coreRouter_S.routeTable "\"192.168.1.0/24:0;192.168.2.0/24:1;192.168.3.0/24:2;192.168.4.0/24:3;10.0.5.0/30:4;10.0.6.0/30:5\""
+config *.seRouter_S.totalPorts 4
+config *.seRouter_S.routeTable "\"0.0.0.0/0:0;192.168.1.2/32:1;192.168.1.3/32:2;192.168.1.4/32:3\""
+config *.eeRouter_S.totalPorts 4
+config *.eeRouter_S.routeTable "\"0.0.0.0/0:0;192.168.2.2/32:1;192.168.2.3/32:2;192.168.2.4/32:3\""
+config *.bbaRouter_S.totalPorts 4
+config *.bbaRouter_S.routeTable "\"0.0.0.0/0:0;192.168.3.2/32:1;192.168.3.3/32:2;192.168.3.4/32:3\""
+config *.adminRouter_S.totalPorts 4
+config *.adminRouter_S.routeTable "\"0.0.0.0/0:0;192.168.4.2/32:1;192.168.4.3/32:2;192.168.4.4/32:3\""
+config *.seHost1_S.srcAddress "\"192.168.1.2\""
+config *.seHost2_S.srcAddress "\"192.168.1.3\""
+config *.seHost3_S.srcAddress "\"192.168.1.4\""
+config *.eeHost1_S.srcAddress "\"192.168.2.2\""
+config *.eeHost2_S.srcAddress "\"192.168.2.3\""
+config *.eeHost3_S.srcAddress "\"192.168.2.4\""
+config *.bbaHost1_S.srcAddress "\"192.168.3.2\""
+config *.bbaHost2_S.srcAddress "\"192.168.3.3\""
+config *.bbaHost3_S.srcAddress "\"192.168.3.4\""
+config *.adminHost1_S.srcAddress "\"192.168.4.2\""
+config *.adminHost2_S.srcAddress "\"192.168.4.3\""
+config *.adminHost3_S.srcAddress "\"192.168.4.4\""
+config *.dnsServer_S.isDnsServer true
+config *.dnsServer_S.isAppServer false
+config *.dnsServer_S.srcAddress "\"10.0.5.2\""
+config *.dnsServer_S.startTime 99999.0
+config *.appServer_S.isAppServer true
+config *.appServer_S.isDnsServer false
+config *.appServer_S.srcAddress "\"10.0.6.2\""
+config *.appServer_S.startTime 99999.0
+config **.dnsAddress "\"10.0.5.2\""
+config **.destAddress "\"appserver.nuces\""
+config **.trafficProfile "\"CBR\""
+config **.packetSize 512
+config **.sendInterval 0.1
+config **.stopTime 175.0
+config **.packetsForwarded.result-recording-modes count
+config **.packetsDropped.result-recording-modes count
+config **.perLinkUtilization.result-recording-modes vector
+config **.endToEndDelay.result-recording-modes stats
+config **.packetsSent.result-recording-modes count
+config **.packetsReceived.result-recording-modes count
+config **.dnsQuerySent.result-recording-modes count
+config **.dnsReplyRcvd.result-recording-modes count
+config network CampusNetwork
+config sim-time-limit 180s
+config record-eventlog true
+config result-dir results
+config output-scalar-file results/StaticRouting-0.sca
+config output-vector-file results/StaticRouting-0.vec
+
+par CampusNetwork.coreRouter_S.ethg$o[0].channel typename "\"CampusNetwork.BackboneLink\""
+par CampusNetwork.coreRouter_S.ethg$o[0].channel disabled false
+attr mutable ""
+par CampusNetwork.coreRouter_S.ethg$o[0].channel delay 0.002s
+attr mutable ""
+attr unit s
+par CampusNetwork.coreRouter_S.ethg$o[0].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.coreRouter_S.ethg$o[0].channel ber 0
+attr mutable ""
+par CampusNetwork.coreRouter_S.ethg$o[0].channel per 0.001
+attr mutable ""
+par CampusNetwork.seRouter_S.ethg$o[0].channel typename "\"CampusNetwork.BackboneLink\""
+par CampusNetwork.seRouter_S.ethg$o[0].channel disabled false
+attr mutable ""
+par CampusNetwork.seRouter_S.ethg$o[0].channel delay 0.002s
+attr mutable ""
+attr unit s
+par CampusNetwork.seRouter_S.ethg$o[0].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.seRouter_S.ethg$o[0].channel ber 0
+attr mutable ""
+par CampusNetwork.seRouter_S.ethg$o[0].channel per 0.001
+attr mutable ""
+par CampusNetwork.coreRouter_S.ethg$o[1].channel typename "\"CampusNetwork.BackboneLink\""
+par CampusNetwork.coreRouter_S.ethg$o[1].channel disabled false
+attr mutable ""
+par CampusNetwork.coreRouter_S.ethg$o[1].channel delay 0.002s
+attr mutable ""
+attr unit s
+par CampusNetwork.coreRouter_S.ethg$o[1].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.coreRouter_S.ethg$o[1].channel ber 0
+attr mutable ""
+par CampusNetwork.coreRouter_S.ethg$o[1].channel per 0.001
+attr mutable ""
+par CampusNetwork.eeRouter_S.ethg$o[0].channel typename "\"CampusNetwork.BackboneLink\""
+par CampusNetwork.eeRouter_S.ethg$o[0].channel disabled false
+attr mutable ""
+par CampusNetwork.eeRouter_S.ethg$o[0].channel delay 0.002s
+attr mutable ""
+attr unit s
+par CampusNetwork.eeRouter_S.ethg$o[0].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.eeRouter_S.ethg$o[0].channel ber 0
+attr mutable ""
+par CampusNetwork.eeRouter_S.ethg$o[0].channel per 0.001
+attr mutable ""
+par CampusNetwork.coreRouter_S.ethg$o[2].channel typename "\"CampusNetwork.BackboneLink\""
+par CampusNetwork.coreRouter_S.ethg$o[2].channel disabled false
+attr mutable ""
+par CampusNetwork.coreRouter_S.ethg$o[2].channel delay 0.002s
+attr mutable ""
+attr unit s
+par CampusNetwork.coreRouter_S.ethg$o[2].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.coreRouter_S.ethg$o[2].channel ber 0
+attr mutable ""
+par CampusNetwork.coreRouter_S.ethg$o[2].channel per 0.001
+attr mutable ""
+par CampusNetwork.bbaRouter_S.ethg$o[0].channel typename "\"CampusNetwork.BackboneLink\""
+par CampusNetwork.bbaRouter_S.ethg$o[0].channel disabled false
+attr mutable ""
+par CampusNetwork.bbaRouter_S.ethg$o[0].channel delay 0.002s
+attr mutable ""
+attr unit s
+par CampusNetwork.bbaRouter_S.ethg$o[0].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.bbaRouter_S.ethg$o[0].channel ber 0
+attr mutable ""
+par CampusNetwork.bbaRouter_S.ethg$o[0].channel per 0.001
+attr mutable ""
+par CampusNetwork.coreRouter_S.ethg$o[3].channel typename "\"CampusNetwork.BackboneLink\""
+par CampusNetwork.coreRouter_S.ethg$o[3].channel disabled false
+attr mutable ""
+par CampusNetwork.coreRouter_S.ethg$o[3].channel delay 0.002s
+attr mutable ""
+attr unit s
+par CampusNetwork.coreRouter_S.ethg$o[3].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.coreRouter_S.ethg$o[3].channel ber 0
+attr mutable ""
+par CampusNetwork.coreRouter_S.ethg$o[3].channel per 0.001
+attr mutable ""
+par CampusNetwork.adminRouter_S.ethg$o[0].channel typename "\"CampusNetwork.BackboneLink\""
+par CampusNetwork.adminRouter_S.ethg$o[0].channel disabled false
+attr mutable ""
+par CampusNetwork.adminRouter_S.ethg$o[0].channel delay 0.002s
+attr mutable ""
+attr unit s
+par CampusNetwork.adminRouter_S.ethg$o[0].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.adminRouter_S.ethg$o[0].channel ber 0
+attr mutable ""
+par CampusNetwork.adminRouter_S.ethg$o[0].channel per 0.001
+attr mutable ""
+par CampusNetwork.coreRouter_S.ethg$o[4].channel typename "\"CampusNetwork.ServerLink\""
+par CampusNetwork.coreRouter_S.ethg$o[4].channel disabled false
+attr mutable ""
+par CampusNetwork.coreRouter_S.ethg$o[4].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CampusNetwork.coreRouter_S.ethg$o[4].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.coreRouter_S.ethg$o[4].channel ber 0
+attr mutable ""
+par CampusNetwork.coreRouter_S.ethg$o[4].channel per 0
+attr mutable ""
+par CampusNetwork.dnsServer_S.ethg$o[0].channel typename "\"CampusNetwork.ServerLink\""
+par CampusNetwork.dnsServer_S.ethg$o[0].channel disabled false
+attr mutable ""
+par CampusNetwork.dnsServer_S.ethg$o[0].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CampusNetwork.dnsServer_S.ethg$o[0].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.dnsServer_S.ethg$o[0].channel ber 0
+attr mutable ""
+par CampusNetwork.dnsServer_S.ethg$o[0].channel per 0
+attr mutable ""
+par CampusNetwork.coreRouter_S.ethg$o[5].channel typename "\"CampusNetwork.ServerLink\""
+par CampusNetwork.coreRouter_S.ethg$o[5].channel disabled false
+attr mutable ""
+par CampusNetwork.coreRouter_S.ethg$o[5].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CampusNetwork.coreRouter_S.ethg$o[5].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.coreRouter_S.ethg$o[5].channel ber 0
+attr mutable ""
+par CampusNetwork.coreRouter_S.ethg$o[5].channel per 0
+attr mutable ""
+par CampusNetwork.appServer_S.ethg$o[0].channel typename "\"CampusNetwork.ServerLink\""
+par CampusNetwork.appServer_S.ethg$o[0].channel disabled false
+attr mutable ""
+par CampusNetwork.appServer_S.ethg$o[0].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CampusNetwork.appServer_S.ethg$o[0].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.appServer_S.ethg$o[0].channel ber 0
+attr mutable ""
+par CampusNetwork.appServer_S.ethg$o[0].channel per 0
+attr mutable ""
+par CampusNetwork.seRouter_S.ethg$o[1].channel typename "\"CampusNetwork.AccessLink\""
+par CampusNetwork.seRouter_S.ethg$o[1].channel disabled false
+attr mutable ""
+par CampusNetwork.seRouter_S.ethg$o[1].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CampusNetwork.seRouter_S.ethg$o[1].channel datarate 1e+07bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.seRouter_S.ethg$o[1].channel ber 0
+attr mutable ""
+par CampusNetwork.seRouter_S.ethg$o[1].channel per 0
+attr mutable ""
+par CampusNetwork.seHost1_S.ethg$o[0].channel typename "\"CampusNetwork.AccessLink\""
+par CampusNetwork.seHost1_S.ethg$o[0].channel disabled false
+attr mutable ""
+par CampusNetwork.seHost1_S.ethg$o[0].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CampusNetwork.seHost1_S.ethg$o[0].channel datarate 1e+07bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.seHost1_S.ethg$o[0].channel ber 0
+attr mutable ""
+par CampusNetwork.seHost1_S.ethg$o[0].channel per 0
+attr mutable ""
+par CampusNetwork.seRouter_S.ethg$o[2].channel typename "\"CampusNetwork.AccessLink\""
+par CampusNetwork.seRouter_S.ethg$o[2].channel disabled false
+attr mutable ""
+par CampusNetwork.seRouter_S.ethg$o[2].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CampusNetwork.seRouter_S.ethg$o[2].channel datarate 1e+07bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.seRouter_S.ethg$o[2].channel ber 0
+attr mutable ""
+par CampusNetwork.seRouter_S.ethg$o[2].channel per 0
+attr mutable ""
+par CampusNetwork.seHost2_S.ethg$o[0].channel typename "\"CampusNetwork.AccessLink\""
+par CampusNetwork.seHost2_S.ethg$o[0].channel disabled false
+attr mutable ""
+par CampusNetwork.seHost2_S.ethg$o[0].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CampusNetwork.seHost2_S.ethg$o[0].channel datarate 1e+07bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.seHost2_S.ethg$o[0].channel ber 0
+attr mutable ""
+par CampusNetwork.seHost2_S.ethg$o[0].channel per 0
+attr mutable ""
+par CampusNetwork.seRouter_S.ethg$o[3].channel typename "\"CampusNetwork.AccessLink\""
+par CampusNetwork.seRouter_S.ethg$o[3].channel disabled false
+attr mutable ""
+par CampusNetwork.seRouter_S.ethg$o[3].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CampusNetwork.seRouter_S.ethg$o[3].channel datarate 1e+07bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.seRouter_S.ethg$o[3].channel ber 0
+attr mutable ""
+par CampusNetwork.seRouter_S.ethg$o[3].channel per 0
+attr mutable ""
+par CampusNetwork.seHost3_S.ethg$o[0].channel typename "\"CampusNetwork.AccessLink\""
+par CampusNetwork.seHost3_S.ethg$o[0].channel disabled false
+attr mutable ""
+par CampusNetwork.seHost3_S.ethg$o[0].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CampusNetwork.seHost3_S.ethg$o[0].channel datarate 1e+07bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.seHost3_S.ethg$o[0].channel ber 0
+attr mutable ""
+par CampusNetwork.seHost3_S.ethg$o[0].channel per 0
+attr mutable ""
+par CampusNetwork.eeRouter_S.ethg$o[1].channel typename "\"CampusNetwork.AccessLink\""
+par CampusNetwork.eeRouter_S.ethg$o[1].channel disabled false
+attr mutable ""
+par CampusNetwork.eeRouter_S.ethg$o[1].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CampusNetwork.eeRouter_S.ethg$o[1].channel datarate 1e+07bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.eeRouter_S.ethg$o[1].channel ber 0
+attr mutable ""
+par CampusNetwork.eeRouter_S.ethg$o[1].channel per 0
+attr mutable ""
+par CampusNetwork.eeHost1_S.ethg$o[0].channel typename "\"CampusNetwork.AccessLink\""
+par CampusNetwork.eeHost1_S.ethg$o[0].channel disabled false
+attr mutable ""
+par CampusNetwork.eeHost1_S.ethg$o[0].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CampusNetwork.eeHost1_S.ethg$o[0].channel datarate 1e+07bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.eeHost1_S.ethg$o[0].channel ber 0
+attr mutable ""
+par CampusNetwork.eeHost1_S.ethg$o[0].channel per 0
+attr mutable ""
+par CampusNetwork.eeRouter_S.ethg$o[2].channel typename "\"CampusNetwork.AccessLink\""
+par CampusNetwork.eeRouter_S.ethg$o[2].channel disabled false
+attr mutable ""
+par CampusNetwork.eeRouter_S.ethg$o[2].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CampusNetwork.eeRouter_S.ethg$o[2].channel datarate 1e+07bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.eeRouter_S.ethg$o[2].channel ber 0
+attr mutable ""
+par CampusNetwork.eeRouter_S.ethg$o[2].channel per 0
+attr mutable ""
+par CampusNetwork.eeHost2_S.ethg$o[0].channel typename "\"CampusNetwork.AccessLink\""
+par CampusNetwork.eeHost2_S.ethg$o[0].channel disabled false
+attr mutable ""
+par CampusNetwork.eeHost2_S.ethg$o[0].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CampusNetwork.eeHost2_S.ethg$o[0].channel datarate 1e+07bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.eeHost2_S.ethg$o[0].channel ber 0
+attr mutable ""
+par CampusNetwork.eeHost2_S.ethg$o[0].channel per 0
+attr mutable ""
+par CampusNetwork.eeRouter_S.ethg$o[3].channel typename "\"CampusNetwork.AccessLink\""
+par CampusNetwork.eeRouter_S.ethg$o[3].channel disabled false
+attr mutable ""
+par CampusNetwork.eeRouter_S.ethg$o[3].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CampusNetwork.eeRouter_S.ethg$o[3].channel datarate 1e+07bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.eeRouter_S.ethg$o[3].channel ber 0
+attr mutable ""
+par CampusNetwork.eeRouter_S.ethg$o[3].channel per 0
+attr mutable ""
+par CampusNetwork.eeHost3_S.ethg$o[0].channel typename "\"CampusNetwork.AccessLink\""
+par CampusNetwork.eeHost3_S.ethg$o[0].channel disabled false
+attr mutable ""
+par CampusNetwork.eeHost3_S.ethg$o[0].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CampusNetwork.eeHost3_S.ethg$o[0].channel datarate 1e+07bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.eeHost3_S.ethg$o[0].channel ber 0
+attr mutable ""
+par CampusNetwork.eeHost3_S.ethg$o[0].channel per 0
+attr mutable ""
+par CampusNetwork.bbaRouter_S.ethg$o[1].channel typename "\"CampusNetwork.AccessLink\""
+par CampusNetwork.bbaRouter_S.ethg$o[1].channel disabled false
+attr mutable ""
+par CampusNetwork.bbaRouter_S.ethg$o[1].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CampusNetwork.bbaRouter_S.ethg$o[1].channel datarate 1e+07bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.bbaRouter_S.ethg$o[1].channel ber 0
+attr mutable ""
+par CampusNetwork.bbaRouter_S.ethg$o[1].channel per 0
+attr mutable ""
+par CampusNetwork.bbaHost1_S.ethg$o[0].channel typename "\"CampusNetwork.AccessLink\""
+par CampusNetwork.bbaHost1_S.ethg$o[0].channel disabled false
+attr mutable ""
+par CampusNetwork.bbaHost1_S.ethg$o[0].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CampusNetwork.bbaHost1_S.ethg$o[0].channel datarate 1e+07bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.bbaHost1_S.ethg$o[0].channel ber 0
+attr mutable ""
+par CampusNetwork.bbaHost1_S.ethg$o[0].channel per 0
+attr mutable ""
+par CampusNetwork.bbaRouter_S.ethg$o[2].channel typename "\"CampusNetwork.AccessLink\""
+par CampusNetwork.bbaRouter_S.ethg$o[2].channel disabled false
+attr mutable ""
+par CampusNetwork.bbaRouter_S.ethg$o[2].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CampusNetwork.bbaRouter_S.ethg$o[2].channel datarate 1e+07bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.bbaRouter_S.ethg$o[2].channel ber 0
+attr mutable ""
+par CampusNetwork.bbaRouter_S.ethg$o[2].channel per 0
+attr mutable ""
+par CampusNetwork.bbaHost2_S.ethg$o[0].channel typename "\"CampusNetwork.AccessLink\""
+par CampusNetwork.bbaHost2_S.ethg$o[0].channel disabled false
+attr mutable ""
+par CampusNetwork.bbaHost2_S.ethg$o[0].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CampusNetwork.bbaHost2_S.ethg$o[0].channel datarate 1e+07bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.bbaHost2_S.ethg$o[0].channel ber 0
+attr mutable ""
+par CampusNetwork.bbaHost2_S.ethg$o[0].channel per 0
+attr mutable ""
+par CampusNetwork.bbaRouter_S.ethg$o[3].channel typename "\"CampusNetwork.AccessLink\""
+par CampusNetwork.bbaRouter_S.ethg$o[3].channel disabled false
+attr mutable ""
+par CampusNetwork.bbaRouter_S.ethg$o[3].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CampusNetwork.bbaRouter_S.ethg$o[3].channel datarate 1e+07bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.bbaRouter_S.ethg$o[3].channel ber 0
+attr mutable ""
+par CampusNetwork.bbaRouter_S.ethg$o[3].channel per 0
+attr mutable ""
+par CampusNetwork.bbaHost3_S.ethg$o[0].channel typename "\"CampusNetwork.AccessLink\""
+par CampusNetwork.bbaHost3_S.ethg$o[0].channel disabled false
+attr mutable ""
+par CampusNetwork.bbaHost3_S.ethg$o[0].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CampusNetwork.bbaHost3_S.ethg$o[0].channel datarate 1e+07bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.bbaHost3_S.ethg$o[0].channel ber 0
+attr mutable ""
+par CampusNetwork.bbaHost3_S.ethg$o[0].channel per 0
+attr mutable ""
+par CampusNetwork.adminRouter_S.ethg$o[1].channel typename "\"CampusNetwork.AccessLink\""
+par CampusNetwork.adminRouter_S.ethg$o[1].channel disabled false
+attr mutable ""
+par CampusNetwork.adminRouter_S.ethg$o[1].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CampusNetwork.adminRouter_S.ethg$o[1].channel datarate 1e+07bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.adminRouter_S.ethg$o[1].channel ber 0
+attr mutable ""
+par CampusNetwork.adminRouter_S.ethg$o[1].channel per 0
+attr mutable ""
+par CampusNetwork.adminHost1_S.ethg$o[0].channel typename "\"CampusNetwork.AccessLink\""
+par CampusNetwork.adminHost1_S.ethg$o[0].channel disabled false
+attr mutable ""
+par CampusNetwork.adminHost1_S.ethg$o[0].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CampusNetwork.adminHost1_S.ethg$o[0].channel datarate 1e+07bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.adminHost1_S.ethg$o[0].channel ber 0
+attr mutable ""
+par CampusNetwork.adminHost1_S.ethg$o[0].channel per 0
+attr mutable ""
+par CampusNetwork.adminRouter_S.ethg$o[2].channel typename "\"CampusNetwork.AccessLink\""
+par CampusNetwork.adminRouter_S.ethg$o[2].channel disabled false
+attr mutable ""
+par CampusNetwork.adminRouter_S.ethg$o[2].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CampusNetwork.adminRouter_S.ethg$o[2].channel datarate 1e+07bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.adminRouter_S.ethg$o[2].channel ber 0
+attr mutable ""
+par CampusNetwork.adminRouter_S.ethg$o[2].channel per 0
+attr mutable ""
+par CampusNetwork.adminHost2_S.ethg$o[0].channel typename "\"CampusNetwork.AccessLink\""
+par CampusNetwork.adminHost2_S.ethg$o[0].channel disabled false
+attr mutable ""
+par CampusNetwork.adminHost2_S.ethg$o[0].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CampusNetwork.adminHost2_S.ethg$o[0].channel datarate 1e+07bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.adminHost2_S.ethg$o[0].channel ber 0
+attr mutable ""
+par CampusNetwork.adminHost2_S.ethg$o[0].channel per 0
+attr mutable ""
+par CampusNetwork.adminRouter_S.ethg$o[3].channel typename "\"CampusNetwork.AccessLink\""
+par CampusNetwork.adminRouter_S.ethg$o[3].channel disabled false
+attr mutable ""
+par CampusNetwork.adminRouter_S.ethg$o[3].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CampusNetwork.adminRouter_S.ethg$o[3].channel datarate 1e+07bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.adminRouter_S.ethg$o[3].channel ber 0
+attr mutable ""
+par CampusNetwork.adminRouter_S.ethg$o[3].channel per 0
+attr mutable ""
+par CampusNetwork.adminHost3_S.ethg$o[0].channel typename "\"CampusNetwork.AccessLink\""
+par CampusNetwork.adminHost3_S.ethg$o[0].channel disabled false
+attr mutable ""
+par CampusNetwork.adminHost3_S.ethg$o[0].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CampusNetwork.adminHost3_S.ethg$o[0].channel datarate 1e+07bps
+attr mutable ""
+attr unit bps
+par CampusNetwork.adminHost3_S.ethg$o[0].channel ber 0
+attr mutable ""
+par CampusNetwork.adminHost3_S.ethg$o[0].channel per 0
+attr mutable ""
+par CampusNetwork.coreRouter_S typename "\"StaticRouter\""
+par CampusNetwork.coreRouter_S totalPorts 6
+par CampusNetwork.coreRouter_S ipAddress "\"10.0.0.1\""
+par CampusNetwork.coreRouter_S routeTable "\"192.168.1.0/24:0;192.168.2.0/24:1;192.168.3.0/24:2;192.168.4.0/24:3;10.0.5.0/30:4;10.0.6.0/30:5\""
+scalar CampusNetwork.coreRouter_S "Final Packets Forwarded" 19104
+scalar CampusNetwork.coreRouter_S "Final Packets Dropped" 0
+scalar CampusNetwork.coreRouter_S packetsDropped:count 0
+attr recordingmode count
+attr source packetsDropped
+attr title "Packets Dropped, count"
+scalar CampusNetwork.coreRouter_S packetsForwarded:count 19104
+attr recordingmode count
+attr source packetsForwarded
+attr title "Packets Forwarded, count"
+par CampusNetwork.seRouter_S typename "\"StaticRouter\""
+par CampusNetwork.seRouter_S totalPorts 4
+par CampusNetwork.seRouter_S ipAddress "\"10.0.1.2\""
+par CampusNetwork.seRouter_S routeTable "\"0.0.0.0/0:0;192.168.1.2/32:1;192.168.1.3/32:2;192.168.1.4/32:3\""
+scalar CampusNetwork.seRouter_S "Final Packets Forwarded" 3426
+scalar CampusNetwork.seRouter_S "Final Packets Dropped" 1800
+scalar CampusNetwork.seRouter_S packetsDropped:count 1800
+attr recordingmode count
+attr source packetsDropped
+attr title "Packets Dropped, count"
+scalar CampusNetwork.seRouter_S packetsForwarded:count 3426
+attr recordingmode count
+attr source packetsForwarded
+attr title "Packets Forwarded, count"
+par CampusNetwork.eeRouter_S typename "\"StaticRouter\""
+par CampusNetwork.eeRouter_S totalPorts 4
+par CampusNetwork.eeRouter_S ipAddress "\"10.0.2.2\""
+par CampusNetwork.eeRouter_S routeTable "\"0.0.0.0/0:0;192.168.2.2/32:1;192.168.2.3/32:2;192.168.2.4/32:3\""
+scalar CampusNetwork.eeRouter_S "Final Packets Forwarded" 5226
+scalar CampusNetwork.eeRouter_S "Final Packets Dropped" 0
+scalar CampusNetwork.eeRouter_S packetsDropped:count 0
+attr recordingmode count
+attr source packetsDropped
+attr title "Packets Dropped, count"
+scalar CampusNetwork.eeRouter_S packetsForwarded:count 5226
+attr recordingmode count
+attr source packetsForwarded
+attr title "Packets Forwarded, count"
+par CampusNetwork.bbaRouter_S typename "\"StaticRouter\""
+par CampusNetwork.bbaRouter_S totalPorts 4
+par CampusNetwork.bbaRouter_S ipAddress "\"10.0.3.2\""
+par CampusNetwork.bbaRouter_S routeTable "\"0.0.0.0/0:0;192.168.3.2/32:1;192.168.3.3/32:2;192.168.3.4/32:3\""
+scalar CampusNetwork.bbaRouter_S "Final Packets Forwarded" 5226
+scalar CampusNetwork.bbaRouter_S "Final Packets Dropped" 0
+scalar CampusNetwork.bbaRouter_S packetsDropped:count 0
+attr recordingmode count
+attr source packetsDropped
+attr title "Packets Dropped, count"
+scalar CampusNetwork.bbaRouter_S packetsForwarded:count 5226
+attr recordingmode count
+attr source packetsForwarded
+attr title "Packets Forwarded, count"
+par CampusNetwork.adminRouter_S typename "\"StaticRouter\""
+par CampusNetwork.adminRouter_S totalPorts 4
+par CampusNetwork.adminRouter_S ipAddress "\"10.0.4.2\""
+par CampusNetwork.adminRouter_S routeTable "\"0.0.0.0/0:0;192.168.4.2/32:1;192.168.4.3/32:2;192.168.4.4/32:3\""
+scalar CampusNetwork.adminRouter_S "Final Packets Forwarded" 5226
+scalar CampusNetwork.adminRouter_S "Final Packets Dropped" 0
+scalar CampusNetwork.adminRouter_S packetsDropped:count 0
+attr recordingmode count
+attr source packetsDropped
+attr title "Packets Dropped, count"
+scalar CampusNetwork.adminRouter_S packetsForwarded:count 5226
+attr recordingmode count
+attr source packetsForwarded
+attr title "Packets Forwarded, count"
+par CampusNetwork.seHost1_S typename "\"TrafficGenerator\""
+par CampusNetwork.seHost1_S trafficProfile "\"CBR\""
+par CampusNetwork.seHost1_S packetSize 512
+par CampusNetwork.seHost1_S sendInterval 0.1
+par CampusNetwork.seHost1_S burstSize 10
+par CampusNetwork.seHost1_S burstInterval 0.01
+par CampusNetwork.seHost1_S silenceTime 1
+par CampusNetwork.seHost1_S srcAddress "\"192.168.1.2\""
+par CampusNetwork.seHost1_S destAddress "\"appserver.nuces\""
+par CampusNetwork.seHost1_S dnsAddress "\"10.0.5.2\""
+par CampusNetwork.seHost1_S isDnsServer false
+par CampusNetwork.seHost1_S isAppServer false
+par CampusNetwork.seHost1_S startTime 1
+par CampusNetwork.seHost1_S stopTime 175
+par CampusNetwork.seHost1_S isInet false
+scalar CampusNetwork.seHost1_S TotalPacketsSent 1740
+scalar CampusNetwork.seHost1_S dnsReplyRcvd:count 1
+attr recordingmode count
+attr source dnsReplyRcvd
+attr title "DNS Replies Received, count"
+scalar CampusNetwork.seHost1_S dnsQuerySent:count 1
+attr recordingmode count
+attr source dnsQuerySent
+attr title "DNS Queries Sent, count"
+statistic CampusNetwork.seHost1_S endToEndDelay:stats
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr recordingmode stats
+attr source endToEndDelay
+attr title "End-to-End Delay"
+scalar CampusNetwork.seHost1_S packetsReceived:count 0
+attr recordingmode count
+attr source packetsReceived
+attr title "Packets Received, count"
+scalar CampusNetwork.seHost1_S packetsSent:count 1740
+attr recordingmode count
+attr source packetsSent
+attr title "Packets Sent, count"
+par CampusNetwork.seHost2_S typename "\"TrafficGenerator\""
+par CampusNetwork.seHost2_S trafficProfile "\"CBR\""
+par CampusNetwork.seHost2_S packetSize 512
+par CampusNetwork.seHost2_S sendInterval 0.1
+par CampusNetwork.seHost2_S burstSize 10
+par CampusNetwork.seHost2_S burstInterval 0.01
+par CampusNetwork.seHost2_S silenceTime 1
+par CampusNetwork.seHost2_S srcAddress "\"192.168.1.3\""
+par CampusNetwork.seHost2_S destAddress "\"appserver.nuces\""
+par CampusNetwork.seHost2_S dnsAddress "\"10.0.5.2\""
+par CampusNetwork.seHost2_S isDnsServer false
+par CampusNetwork.seHost2_S isAppServer false
+par CampusNetwork.seHost2_S startTime 1
+par CampusNetwork.seHost2_S stopTime 175
+par CampusNetwork.seHost2_S isInet false
+scalar CampusNetwork.seHost2_S TotalPacketsSent 1740
+scalar CampusNetwork.seHost2_S dnsReplyRcvd:count 1
+attr recordingmode count
+attr source dnsReplyRcvd
+attr title "DNS Replies Received, count"
+scalar CampusNetwork.seHost2_S dnsQuerySent:count 1
+attr recordingmode count
+attr source dnsQuerySent
+attr title "DNS Queries Sent, count"
+statistic CampusNetwork.seHost2_S endToEndDelay:stats
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr recordingmode stats
+attr source endToEndDelay
+attr title "End-to-End Delay"
+scalar CampusNetwork.seHost2_S packetsReceived:count 0
+attr recordingmode count
+attr source packetsReceived
+attr title "Packets Received, count"
+scalar CampusNetwork.seHost2_S packetsSent:count 1740
+attr recordingmode count
+attr source packetsSent
+attr title "Packets Sent, count"
+par CampusNetwork.seHost3_S typename "\"TrafficGenerator\""
+par CampusNetwork.seHost3_S trafficProfile "\"CBR\""
+par CampusNetwork.seHost3_S packetSize 512
+par CampusNetwork.seHost3_S sendInterval 0.1
+par CampusNetwork.seHost3_S burstSize 10
+par CampusNetwork.seHost3_S burstInterval 0.01
+par CampusNetwork.seHost3_S silenceTime 1
+par CampusNetwork.seHost3_S srcAddress "\"192.168.1.4\""
+par CampusNetwork.seHost3_S destAddress "\"appserver.nuces\""
+par CampusNetwork.seHost3_S dnsAddress "\"10.0.5.2\""
+par CampusNetwork.seHost3_S isDnsServer false
+par CampusNetwork.seHost3_S isAppServer false
+par CampusNetwork.seHost3_S startTime 1
+par CampusNetwork.seHost3_S stopTime 175
+par CampusNetwork.seHost3_S isInet false
+scalar CampusNetwork.seHost3_S TotalPacketsSent 1740
+scalar CampusNetwork.seHost3_S dnsReplyRcvd:count 1
+attr recordingmode count
+attr source dnsReplyRcvd
+attr title "DNS Replies Received, count"
+scalar CampusNetwork.seHost3_S dnsQuerySent:count 1
+attr recordingmode count
+attr source dnsQuerySent
+attr title "DNS Queries Sent, count"
+statistic CampusNetwork.seHost3_S endToEndDelay:stats
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr recordingmode stats
+attr source endToEndDelay
+attr title "End-to-End Delay"
+scalar CampusNetwork.seHost3_S packetsReceived:count 0
+attr recordingmode count
+attr source packetsReceived
+attr title "Packets Received, count"
+scalar CampusNetwork.seHost3_S packetsSent:count 1740
+attr recordingmode count
+attr source packetsSent
+attr title "Packets Sent, count"
+par CampusNetwork.eeHost1_S typename "\"TrafficGenerator\""
+par CampusNetwork.eeHost1_S trafficProfile "\"CBR\""
+par CampusNetwork.eeHost1_S packetSize 512
+par CampusNetwork.eeHost1_S sendInterval 0.1
+par CampusNetwork.eeHost1_S burstSize 10
+par CampusNetwork.eeHost1_S burstInterval 0.01
+par CampusNetwork.eeHost1_S silenceTime 1
+par CampusNetwork.eeHost1_S srcAddress "\"192.168.2.2\""
+par CampusNetwork.eeHost1_S destAddress "\"appserver.nuces\""
+par CampusNetwork.eeHost1_S dnsAddress "\"10.0.5.2\""
+par CampusNetwork.eeHost1_S isDnsServer false
+par CampusNetwork.eeHost1_S isAppServer false
+par CampusNetwork.eeHost1_S startTime 1
+par CampusNetwork.eeHost1_S stopTime 175
+par CampusNetwork.eeHost1_S isInet false
+scalar CampusNetwork.eeHost1_S TotalPacketsSent 1740
+scalar CampusNetwork.eeHost1_S dnsReplyRcvd:count 1
+attr recordingmode count
+attr source dnsReplyRcvd
+attr title "DNS Replies Received, count"
+scalar CampusNetwork.eeHost1_S dnsQuerySent:count 1
+attr recordingmode count
+attr source dnsQuerySent
+attr title "DNS Queries Sent, count"
+statistic CampusNetwork.eeHost1_S endToEndDelay:stats
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr recordingmode stats
+attr source endToEndDelay
+attr title "End-to-End Delay"
+scalar CampusNetwork.eeHost1_S packetsReceived:count 0
+attr recordingmode count
+attr source packetsReceived
+attr title "Packets Received, count"
+scalar CampusNetwork.eeHost1_S packetsSent:count 1740
+attr recordingmode count
+attr source packetsSent
+attr title "Packets Sent, count"
+par CampusNetwork.eeHost2_S typename "\"TrafficGenerator\""
+par CampusNetwork.eeHost2_S trafficProfile "\"CBR\""
+par CampusNetwork.eeHost2_S packetSize 512
+par CampusNetwork.eeHost2_S sendInterval 0.1
+par CampusNetwork.eeHost2_S burstSize 10
+par CampusNetwork.eeHost2_S burstInterval 0.01
+par CampusNetwork.eeHost2_S silenceTime 1
+par CampusNetwork.eeHost2_S srcAddress "\"192.168.2.3\""
+par CampusNetwork.eeHost2_S destAddress "\"appserver.nuces\""
+par CampusNetwork.eeHost2_S dnsAddress "\"10.0.5.2\""
+par CampusNetwork.eeHost2_S isDnsServer false
+par CampusNetwork.eeHost2_S isAppServer false
+par CampusNetwork.eeHost2_S startTime 1
+par CampusNetwork.eeHost2_S stopTime 175
+par CampusNetwork.eeHost2_S isInet false
+scalar CampusNetwork.eeHost2_S TotalPacketsSent 1740
+scalar CampusNetwork.eeHost2_S dnsReplyRcvd:count 1
+attr recordingmode count
+attr source dnsReplyRcvd
+attr title "DNS Replies Received, count"
+scalar CampusNetwork.eeHost2_S dnsQuerySent:count 1
+attr recordingmode count
+attr source dnsQuerySent
+attr title "DNS Queries Sent, count"
+statistic CampusNetwork.eeHost2_S endToEndDelay:stats
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr recordingmode stats
+attr source endToEndDelay
+attr title "End-to-End Delay"
+scalar CampusNetwork.eeHost2_S packetsReceived:count 0
+attr recordingmode count
+attr source packetsReceived
+attr title "Packets Received, count"
+scalar CampusNetwork.eeHost2_S packetsSent:count 1740
+attr recordingmode count
+attr source packetsSent
+attr title "Packets Sent, count"
+par CampusNetwork.eeHost3_S typename "\"TrafficGenerator\""
+par CampusNetwork.eeHost3_S trafficProfile "\"CBR\""
+par CampusNetwork.eeHost3_S packetSize 512
+par CampusNetwork.eeHost3_S sendInterval 0.1
+par CampusNetwork.eeHost3_S burstSize 10
+par CampusNetwork.eeHost3_S burstInterval 0.01
+par CampusNetwork.eeHost3_S silenceTime 1
+par CampusNetwork.eeHost3_S srcAddress "\"192.168.2.4\""
+par CampusNetwork.eeHost3_S destAddress "\"appserver.nuces\""
+par CampusNetwork.eeHost3_S dnsAddress "\"10.0.5.2\""
+par CampusNetwork.eeHost3_S isDnsServer false
+par CampusNetwork.eeHost3_S isAppServer false
+par CampusNetwork.eeHost3_S startTime 1
+par CampusNetwork.eeHost3_S stopTime 175
+par CampusNetwork.eeHost3_S isInet false
+scalar CampusNetwork.eeHost3_S TotalPacketsSent 1740
+scalar CampusNetwork.eeHost3_S dnsReplyRcvd:count 1
+attr recordingmode count
+attr source dnsReplyRcvd
+attr title "DNS Replies Received, count"
+scalar CampusNetwork.eeHost3_S dnsQuerySent:count 1
+attr recordingmode count
+attr source dnsQuerySent
+attr title "DNS Queries Sent, count"
+statistic CampusNetwork.eeHost3_S endToEndDelay:stats
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr recordingmode stats
+attr source endToEndDelay
+attr title "End-to-End Delay"
+scalar CampusNetwork.eeHost3_S packetsReceived:count 0
+attr recordingmode count
+attr source packetsReceived
+attr title "Packets Received, count"
+scalar CampusNetwork.eeHost3_S packetsSent:count 1740
+attr recordingmode count
+attr source packetsSent
+attr title "Packets Sent, count"
+par CampusNetwork.bbaHost1_S typename "\"TrafficGenerator\""
+par CampusNetwork.bbaHost1_S trafficProfile "\"CBR\""
+par CampusNetwork.bbaHost1_S packetSize 512
+par CampusNetwork.bbaHost1_S sendInterval 0.1
+par CampusNetwork.bbaHost1_S burstSize 10
+par CampusNetwork.bbaHost1_S burstInterval 0.01
+par CampusNetwork.bbaHost1_S silenceTime 1
+par CampusNetwork.bbaHost1_S srcAddress "\"192.168.3.2\""
+par CampusNetwork.bbaHost1_S destAddress "\"appserver.nuces\""
+par CampusNetwork.bbaHost1_S dnsAddress "\"10.0.5.2\""
+par CampusNetwork.bbaHost1_S isDnsServer false
+par CampusNetwork.bbaHost1_S isAppServer false
+par CampusNetwork.bbaHost1_S startTime 1
+par CampusNetwork.bbaHost1_S stopTime 175
+par CampusNetwork.bbaHost1_S isInet false
+scalar CampusNetwork.bbaHost1_S TotalPacketsSent 1740
+scalar CampusNetwork.bbaHost1_S dnsReplyRcvd:count 1
+attr recordingmode count
+attr source dnsReplyRcvd
+attr title "DNS Replies Received, count"
+scalar CampusNetwork.bbaHost1_S dnsQuerySent:count 1
+attr recordingmode count
+attr source dnsQuerySent
+attr title "DNS Queries Sent, count"
+statistic CampusNetwork.bbaHost1_S endToEndDelay:stats
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr recordingmode stats
+attr source endToEndDelay
+attr title "End-to-End Delay"
+scalar CampusNetwork.bbaHost1_S packetsReceived:count 0
+attr recordingmode count
+attr source packetsReceived
+attr title "Packets Received, count"
+scalar CampusNetwork.bbaHost1_S packetsSent:count 1740
+attr recordingmode count
+attr source packetsSent
+attr title "Packets Sent, count"
+par CampusNetwork.bbaHost2_S typename "\"TrafficGenerator\""
+par CampusNetwork.bbaHost2_S trafficProfile "\"CBR\""
+par CampusNetwork.bbaHost2_S packetSize 512
+par CampusNetwork.bbaHost2_S sendInterval 0.1
+par CampusNetwork.bbaHost2_S burstSize 10
+par CampusNetwork.bbaHost2_S burstInterval 0.01
+par CampusNetwork.bbaHost2_S silenceTime 1
+par CampusNetwork.bbaHost2_S srcAddress "\"192.168.3.3\""
+par CampusNetwork.bbaHost2_S destAddress "\"appserver.nuces\""
+par CampusNetwork.bbaHost2_S dnsAddress "\"10.0.5.2\""
+par CampusNetwork.bbaHost2_S isDnsServer false
+par CampusNetwork.bbaHost2_S isAppServer false
+par CampusNetwork.bbaHost2_S startTime 1
+par CampusNetwork.bbaHost2_S stopTime 175
+par CampusNetwork.bbaHost2_S isInet false
+scalar CampusNetwork.bbaHost2_S TotalPacketsSent 1740
+scalar CampusNetwork.bbaHost2_S dnsReplyRcvd:count 1
+attr recordingmode count
+attr source dnsReplyRcvd
+attr title "DNS Replies Received, count"
+scalar CampusNetwork.bbaHost2_S dnsQuerySent:count 1
+attr recordingmode count
+attr source dnsQuerySent
+attr title "DNS Queries Sent, count"
+statistic CampusNetwork.bbaHost2_S endToEndDelay:stats
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr recordingmode stats
+attr source endToEndDelay
+attr title "End-to-End Delay"
+scalar CampusNetwork.bbaHost2_S packetsReceived:count 0
+attr recordingmode count
+attr source packetsReceived
+attr title "Packets Received, count"
+scalar CampusNetwork.bbaHost2_S packetsSent:count 1740
+attr recordingmode count
+attr source packetsSent
+attr title "Packets Sent, count"
+par CampusNetwork.bbaHost3_S typename "\"TrafficGenerator\""
+par CampusNetwork.bbaHost3_S trafficProfile "\"CBR\""
+par CampusNetwork.bbaHost3_S packetSize 512
+par CampusNetwork.bbaHost3_S sendInterval 0.1
+par CampusNetwork.bbaHost3_S burstSize 10
+par CampusNetwork.bbaHost3_S burstInterval 0.01
+par CampusNetwork.bbaHost3_S silenceTime 1
+par CampusNetwork.bbaHost3_S srcAddress "\"192.168.3.4\""
+par CampusNetwork.bbaHost3_S destAddress "\"appserver.nuces\""
+par CampusNetwork.bbaHost3_S dnsAddress "\"10.0.5.2\""
+par CampusNetwork.bbaHost3_S isDnsServer false
+par CampusNetwork.bbaHost3_S isAppServer false
+par CampusNetwork.bbaHost3_S startTime 1
+par CampusNetwork.bbaHost3_S stopTime 175
+par CampusNetwork.bbaHost3_S isInet false
+scalar CampusNetwork.bbaHost3_S TotalPacketsSent 1740
+scalar CampusNetwork.bbaHost3_S dnsReplyRcvd:count 1
+attr recordingmode count
+attr source dnsReplyRcvd
+attr title "DNS Replies Received, count"
+scalar CampusNetwork.bbaHost3_S dnsQuerySent:count 1
+attr recordingmode count
+attr source dnsQuerySent
+attr title "DNS Queries Sent, count"
+statistic CampusNetwork.bbaHost3_S endToEndDelay:stats
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr recordingmode stats
+attr source endToEndDelay
+attr title "End-to-End Delay"
+scalar CampusNetwork.bbaHost3_S packetsReceived:count 0
+attr recordingmode count
+attr source packetsReceived
+attr title "Packets Received, count"
+scalar CampusNetwork.bbaHost3_S packetsSent:count 1740
+attr recordingmode count
+attr source packetsSent
+attr title "Packets Sent, count"
+par CampusNetwork.adminHost1_S typename "\"TrafficGenerator\""
+par CampusNetwork.adminHost1_S trafficProfile "\"CBR\""
+par CampusNetwork.adminHost1_S packetSize 512
+par CampusNetwork.adminHost1_S sendInterval 0.1
+par CampusNetwork.adminHost1_S burstSize 10
+par CampusNetwork.adminHost1_S burstInterval 0.01
+par CampusNetwork.adminHost1_S silenceTime 1
+par CampusNetwork.adminHost1_S srcAddress "\"192.168.4.2\""
+par CampusNetwork.adminHost1_S destAddress "\"appserver.nuces\""
+par CampusNetwork.adminHost1_S dnsAddress "\"10.0.5.2\""
+par CampusNetwork.adminHost1_S isDnsServer false
+par CampusNetwork.adminHost1_S isAppServer false
+par CampusNetwork.adminHost1_S startTime 1
+par CampusNetwork.adminHost1_S stopTime 175
+par CampusNetwork.adminHost1_S isInet false
+scalar CampusNetwork.adminHost1_S TotalPacketsSent 1740
+scalar CampusNetwork.adminHost1_S dnsReplyRcvd:count 1
+attr recordingmode count
+attr source dnsReplyRcvd
+attr title "DNS Replies Received, count"
+scalar CampusNetwork.adminHost1_S dnsQuerySent:count 1
+attr recordingmode count
+attr source dnsQuerySent
+attr title "DNS Queries Sent, count"
+statistic CampusNetwork.adminHost1_S endToEndDelay:stats
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr recordingmode stats
+attr source endToEndDelay
+attr title "End-to-End Delay"
+scalar CampusNetwork.adminHost1_S packetsReceived:count 0
+attr recordingmode count
+attr source packetsReceived
+attr title "Packets Received, count"
+scalar CampusNetwork.adminHost1_S packetsSent:count 1740
+attr recordingmode count
+attr source packetsSent
+attr title "Packets Sent, count"
+par CampusNetwork.adminHost2_S typename "\"TrafficGenerator\""
+par CampusNetwork.adminHost2_S trafficProfile "\"CBR\""
+par CampusNetwork.adminHost2_S packetSize 512
+par CampusNetwork.adminHost2_S sendInterval 0.1
+par CampusNetwork.adminHost2_S burstSize 10
+par CampusNetwork.adminHost2_S burstInterval 0.01
+par CampusNetwork.adminHost2_S silenceTime 1
+par CampusNetwork.adminHost2_S srcAddress "\"192.168.4.3\""
+par CampusNetwork.adminHost2_S destAddress "\"appserver.nuces\""
+par CampusNetwork.adminHost2_S dnsAddress "\"10.0.5.2\""
+par CampusNetwork.adminHost2_S isDnsServer false
+par CampusNetwork.adminHost2_S isAppServer false
+par CampusNetwork.adminHost2_S startTime 1
+par CampusNetwork.adminHost2_S stopTime 175
+par CampusNetwork.adminHost2_S isInet false
+scalar CampusNetwork.adminHost2_S TotalPacketsSent 1740
+scalar CampusNetwork.adminHost2_S dnsReplyRcvd:count 1
+attr recordingmode count
+attr source dnsReplyRcvd
+attr title "DNS Replies Received, count"
+scalar CampusNetwork.adminHost2_S dnsQuerySent:count 1
+attr recordingmode count
+attr source dnsQuerySent
+attr title "DNS Queries Sent, count"
+statistic CampusNetwork.adminHost2_S endToEndDelay:stats
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr recordingmode stats
+attr source endToEndDelay
+attr title "End-to-End Delay"
+scalar CampusNetwork.adminHost2_S packetsReceived:count 0
+attr recordingmode count
+attr source packetsReceived
+attr title "Packets Received, count"
+scalar CampusNetwork.adminHost2_S packetsSent:count 1740
+attr recordingmode count
+attr source packetsSent
+attr title "Packets Sent, count"
+par CampusNetwork.adminHost3_S typename "\"TrafficGenerator\""
+par CampusNetwork.adminHost3_S trafficProfile "\"CBR\""
+par CampusNetwork.adminHost3_S packetSize 512
+par CampusNetwork.adminHost3_S sendInterval 0.1
+par CampusNetwork.adminHost3_S burstSize 10
+par CampusNetwork.adminHost3_S burstInterval 0.01
+par CampusNetwork.adminHost3_S silenceTime 1
+par CampusNetwork.adminHost3_S srcAddress "\"192.168.4.4\""
+par CampusNetwork.adminHost3_S destAddress "\"appserver.nuces\""
+par CampusNetwork.adminHost3_S dnsAddress "\"10.0.5.2\""
+par CampusNetwork.adminHost3_S isDnsServer false
+par CampusNetwork.adminHost3_S isAppServer false
+par CampusNetwork.adminHost3_S startTime 1
+par CampusNetwork.adminHost3_S stopTime 175
+par CampusNetwork.adminHost3_S isInet false
+scalar CampusNetwork.adminHost3_S TotalPacketsSent 1740
+scalar CampusNetwork.adminHost3_S dnsReplyRcvd:count 1
+attr recordingmode count
+attr source dnsReplyRcvd
+attr title "DNS Replies Received, count"
+scalar CampusNetwork.adminHost3_S dnsQuerySent:count 1
+attr recordingmode count
+attr source dnsQuerySent
+attr title "DNS Queries Sent, count"
+statistic CampusNetwork.adminHost3_S endToEndDelay:stats
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr recordingmode stats
+attr source endToEndDelay
+attr title "End-to-End Delay"
+scalar CampusNetwork.adminHost3_S packetsReceived:count 0
+attr recordingmode count
+attr source packetsReceived
+attr title "Packets Received, count"
+scalar CampusNetwork.adminHost3_S packetsSent:count 1740
+attr recordingmode count
+attr source packetsSent
+attr title "Packets Sent, count"
+par CampusNetwork.dnsServer_S typename "\"TrafficGenerator\""
+par CampusNetwork.dnsServer_S trafficProfile "\"CBR\""
+par CampusNetwork.dnsServer_S packetSize 512
+par CampusNetwork.dnsServer_S sendInterval 0.1
+par CampusNetwork.dnsServer_S burstSize 10
+par CampusNetwork.dnsServer_S burstInterval 0.01
+par CampusNetwork.dnsServer_S silenceTime 1
+par CampusNetwork.dnsServer_S srcAddress "\"10.0.5.2\""
+par CampusNetwork.dnsServer_S destAddress "\"appserver.nuces\""
+par CampusNetwork.dnsServer_S dnsAddress "\"10.0.5.2\""
+par CampusNetwork.dnsServer_S isDnsServer true
+par CampusNetwork.dnsServer_S isAppServer false
+par CampusNetwork.dnsServer_S startTime 99999
+par CampusNetwork.dnsServer_S stopTime 175
+par CampusNetwork.dnsServer_S isInet false
+scalar CampusNetwork.dnsServer_S TotalPacketsSent 0
+scalar CampusNetwork.dnsServer_S dnsReplyRcvd:count 0
+attr recordingmode count
+attr source dnsReplyRcvd
+attr title "DNS Replies Received, count"
+scalar CampusNetwork.dnsServer_S dnsQuerySent:count 0
+attr recordingmode count
+attr source dnsQuerySent
+attr title "DNS Queries Sent, count"
+statistic CampusNetwork.dnsServer_S endToEndDelay:stats
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr recordingmode stats
+attr source endToEndDelay
+attr title "End-to-End Delay"
+scalar CampusNetwork.dnsServer_S packetsReceived:count 0
+attr recordingmode count
+attr source packetsReceived
+attr title "Packets Received, count"
+scalar CampusNetwork.dnsServer_S packetsSent:count 0
+attr recordingmode count
+attr source packetsSent
+attr title "Packets Sent, count"
+par CampusNetwork.appServer_S typename "\"TrafficGenerator\""
+par CampusNetwork.appServer_S trafficProfile "\"CBR\""
+par CampusNetwork.appServer_S packetSize 512
+par CampusNetwork.appServer_S sendInterval 0.1
+par CampusNetwork.appServer_S burstSize 10
+par CampusNetwork.appServer_S burstInterval 0.01
+par CampusNetwork.appServer_S silenceTime 1
+par CampusNetwork.appServer_S srcAddress "\"10.0.6.2\""
+par CampusNetwork.appServer_S destAddress "\"appserver.nuces\""
+par CampusNetwork.appServer_S dnsAddress "\"10.0.5.2\""
+par CampusNetwork.appServer_S isDnsServer false
+par CampusNetwork.appServer_S isAppServer true
+par CampusNetwork.appServer_S startTime 99999
+par CampusNetwork.appServer_S stopTime 175
+par CampusNetwork.appServer_S isInet false
+scalar CampusNetwork.appServer_S TotalPacketsSent 0
+scalar CampusNetwork.appServer_S dnsReplyRcvd:count 0
+attr recordingmode count
+attr source dnsReplyRcvd
+attr title "DNS Replies Received, count"
+scalar CampusNetwork.appServer_S dnsQuerySent:count 0
+attr recordingmode count
+attr source dnsQuerySent
+attr title "DNS Queries Sent, count"
+statistic CampusNetwork.appServer_S endToEndDelay:stats
+field count 19080
+field mean 0.0046720171069165
+field stddev 0.00011787632051349
+field min 0.0044913999999778
+field max 0.0048859600000242
+field sum 89.142086399966
+field sqrsum 0.41673845201002
+attr recordingmode stats
+attr source endToEndDelay
+attr title "End-to-End Delay"
+scalar CampusNetwork.appServer_S packetsReceived:count 19080
+attr recordingmode count
+attr source packetsReceived
+attr title "Packets Received, count"
+scalar CampusNetwork.appServer_S packetsSent:count 0
+attr recordingmode count
+attr source packetsSent
+attr title "Packets Sent, count"
+par CampusNetwork typename "\"CampusNetwork\""
+par CampusNetwork isInet false
+par CampusNetwork hostType "\"inet.node.inet.StandardHost\""
+par CampusNetwork routerType "\"inet.node.ospfv2.OspfRouter\""
+
