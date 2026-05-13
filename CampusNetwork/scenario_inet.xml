@@ -1,0 +1,25 @@
+<!--  Member 2: Muhammad Inam Ullah  23i-3058 (RIP) -->
+<!--  Member 3: Abdul Basit 23i-3018 (OSPF) -->
+  
+<scenario>
+
+    <!-- Link failure/recovery scenario for INET-based configurations (RIP/OSPF) -->
+    <!-- SE-Core link failure at t=60s -->
+
+    <at t="60">
+        <disconnect src-module="coreRouter_I" src-gate="ethg$o[0]" />
+        <disconnect src-module="seRouter_I"   src-gate="ethg$o[0]" />
+    </at>
+
+    <!-- SE-Core link recovery at t=120s -->
+
+    <at t="120">
+        <connect src-module="coreRouter_I" src-gate="ethg[0]"
+                 dest-module="seRouter_I"  dest-gate="ethg[0]"
+                 channel-type="ned.DatarateChannel">
+            <param name="datarate" value="100Mbps" />
+            <param name="delay"    value="2ms"     />
+            <param name="ber"      value="0.001"   />
+        </connect>
+    </at>
+</scenario>

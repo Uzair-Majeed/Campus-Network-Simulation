@@ -1,0 +1,63 @@
+<!--  Member 2: Muhammad Inam Ullah  23i-3058 (RIP) -->
+<!--  Member 3: Abdul Basit 23i-3018 (OSPF) -->
+  
+<!-- IP Address and Routing Configuration for CampusNetwork (INET mode) -->
+
+
+<config>
+
+
+    <!-- Backbone links -->
+
+    <interface among="coreRouter seRouter"    address="10.0.1.x" netmask="255.255.255.252" />
+    <interface among="coreRouter eeRouter"    address="10.0.2.x" netmask="255.255.255.252" />
+    <interface among="coreRouter bbaRouter"   address="10.0.3.x" netmask="255.255.255.252" />
+    <interface among="coreRouter adminRouter" address="10.0.4.x" netmask="255.255.255.252" />
+
+
+    <!-- Server links -->
+
+    <interface among="coreRouter dnsServer" address="10.0.5.x" netmask="255.255.255.252" />
+    <interface among="coreRouter appServer" address="10.0.6.x" netmask="255.255.255.252" />
+
+
+    <!-- SE department host links -->
+
+    <interface among="seRouter seHost1" address="192.168.1.x" netmask="255.255.255.252" />
+    <interface among="seRouter seHost2" address="192.168.1.x" netmask="255.255.255.252" />
+    <interface among="seRouter seHost3" address="192.168.1.x" netmask="255.255.255.252" />
+
+
+    <!-- EE department host links -->
+
+    <interface among="eeRouter eeHost1" address="192.168.2.x" netmask="255.255.255.252" />
+    <interface among="eeRouter eeHost2" address="192.168.2.x" netmask="255.255.255.252" />
+    <interface among="eeRouter eeHost3" address="192.168.2.x" netmask="255.255.255.252" />
+
+
+    <!-- BBA department host links -->
+
+    <interface among="bbaRouter bbaHost1" address="192.168.3.x" netmask="255.255.255.252" />
+    <interface among="bbaRouter bbaHost2" address="192.168.3.x" netmask="255.255.255.252" />
+    <interface among="bbaRouter bbaHost3" address="192.168.3.x" netmask="255.255.255.252" />
+
+
+    <!-- Admin department host links -->
+
+    <interface among="adminRouter adminHost1" address="192.168.4.x" netmask="255.255.255.252" />
+    <interface among="adminRouter adminHost2" address="192.168.4.x" netmask="255.255.255.252" />
+    <interface among="adminRouter adminHost3" address="192.168.4.x" netmask="255.255.255.252" />
+
+
+    <!-- Default routes for department hosts -->
+
+    <route hosts="seHost1 seHost2 seHost3"          destination="*" gateway="seRouter"    />
+    <route hosts="eeHost1 eeHost2 eeHost3"          destination="*" gateway="eeRouter"    />
+    <route hosts="bbaHost1 bbaHost2 bbaHost3"       destination="*" gateway="bbaRouter"   />
+    <route hosts="adminHost1 adminHost2 adminHost3" destination="*" gateway="adminRouter" />
+
+    <!-- Servers use core router as default gateway -->
+    <route hosts="dnsServer" destination="*" gateway="coreRouter" />
+    <route hosts="appServer" destination="*" gateway="coreRouter" />
+
+</config>

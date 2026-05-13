@@ -1,0 +1,13 @@
+<!--  Member 2: Muhammad Inam Ullah  23i-3058 (RIP) -->
+<!--  Member 3: Abdul Basit 23i-3018 (OSPF) -->
+
+
+<scenario>
+    <!-- Link failure and recovery simulation via channel attributes -->
+
+    <set-channel-attr t="60s" src-module="coreRouter_I" src-gate="ethg$o[0]" attr="disabled" value="true" />
+    <set-channel-attr t="60s" src-module="seRouter_I" src-gate="ethg$o[0]" attr="disabled" value="true" />
+    
+    <set-channel-attr t="120s" src-module="coreRouter_I" src-gate="ethg$o[0]" attr="disabled" value="false" />
+    <set-channel-attr t="120s" src-module="seRouter_I" src-gate="ethg$o[0]" attr="disabled" value="false" />
+</scenario>
